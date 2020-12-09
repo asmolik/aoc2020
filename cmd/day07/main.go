@@ -76,7 +76,6 @@ func countInnerBags(color string, rules map[string]Rule) int {
 	sum := 0
 	rule := rules[color]
 	for col, count := range rule.inner_bags {
-		// fmt.Println(color + " contains " + strconv.Itoa(count) + " " + col)
 		sum += count
 		sum += count * countInnerBags(col, rules)
 	}
@@ -94,7 +93,6 @@ func run_for_data(data []string) {
 	rules := parseInput(data)
 	fmt.Println(part1(rules))
 	fmt.Println(part2(rules))
-
 }
 
 func part1(rules map[string]Rule) int {
